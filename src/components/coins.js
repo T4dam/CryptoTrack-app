@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CoinItem from './coinItem';
 import './coins.css';
+import Hero from './hero';
 
 const Coins = (props) => {
 	return (
 		<div className="container">
+			<Hero />
 			<div>
 				<div className="heading">
 					<p>#</p>

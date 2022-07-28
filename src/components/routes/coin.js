@@ -14,9 +14,9 @@ const Coin = () => {
 			.get(url)
 			.then((res) => {
 				setCoin(res.data);
-				console.log(
-					res.data.market_data.price_change_percentage_7d_in_currency.eur,
-				);
+				// console.log(
+				// 	res.data.market_data.price_change_percentage_7d_in_currency.eur,
+				// );
 			})
 			.catch((error) => {
 				console.log(error);
