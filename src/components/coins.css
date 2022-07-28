@@ -6,7 +6,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #f8f8f9;
+	/* background-color: #f8f8f9; */
 	box-shadow: 0 0 2px #18191b;
 	border-radius: 8px;
 	margin: 2em 1rem;
@@ -22,7 +22,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #f8f8f9;
+	/* background-color: #f8f8f9; */
 	box-shadow: 0 0 2px #18191b;
 	border-radius: 8px;
 	margin: 2em 1rem;
