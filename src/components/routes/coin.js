@@ -14,6 +14,9 @@ const Coin = () => {
 			.get(url)
 			.then((res) => {
 				setCoin(res.data);
+				console.log(
+					res.data.market_data.price_change_percentage_7d_in_currency.eur,
+				);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -60,67 +63,127 @@ const Coin = () => {
 									<td>
 										{coin.market_data
 											?.price_change_percentage_1h_in_currency ? (
-											<p>
-												{coin.market_data.price_change_percentage_1h_in_currency.eur.toFixed(
-													1,
-												)}
-												%
-											</p>
+											coin.market_data.price_change_percentage_1h_in_currency <
+											0 ? (
+												<p className="red">
+													{coin.market_data.price_change_percentage_1h_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											) : (
+												<p className="green">
+													{coin.market_data.price_change_percentage_1h_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											)
 										) : null}
 									</td>
 									<td>
 										{coin.market_data
 											?.price_change_percentage_24h_in_currency ? (
-											<p>
-												{coin.market_data.price_change_percentage_24h_in_currency.eur.toFixed(
-													1,
-												)}
-												%
-											</p>
+											coin.market_data.price_change_percentage_24h_in_currency
+												.eur < 0 ? (
+												<p className="red">
+													{coin.market_data.price_change_percentage_24h_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											) : (
+												<p className="green">
+													{coin.market_data.price_change_percentage_24h_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											)
 										) : null}
 									</td>
 									<td>
 										{coin.market_data
 											?.price_change_percentage_7d_in_currency ? (
-											<p>
-												{coin.market_data.price_change_percentage_7d_in_currency.eur.toFixed(
-													1,
-												)}
-												%
-											</p>
+											coin.market_data.price_change_percentage_7d_in_currency
+												.eur < 0 ? (
+												<p className="red">
+													{coin.market_data.price_change_percentage_7d_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											) : (
+												<p className="green">
+													{coin.market_data.price_change_percentage_7d_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											)
 										) : null}
 									</td>
 									<td>
 										{coin.market_data
 											?.price_change_percentage_14d_in_currency ? (
-											<p>
-												{coin.market_data.price_change_percentage_14d_in_currency.eur.toFixed(
-													1,
-												)}
-												%
-											</p>
+											coin.market_data.price_change_percentage_14d_in_currency
+												.eur < 0 ? (
+												<p className="red">
+													{coin.market_data.price_change_percentage_14d_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											) : (
+												<p className="green">
+													{coin.market_data.price_change_percentage_14d_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											)
 										) : null}
 									</td>
 									<td>
 										{coin.market_data
 											?.price_change_percentage_30d_in_currency ? (
-											<p>
-												{coin.market_data.price_change_percentage_30d_in_currency.eur.toFixed(
-													1,
-												)}
-												%
-											</p>
+											coin.market_data.price_change_percentage_30d_in_currency
+												.eur < 0 ? (
+												<p className="red">
+													{coin.market_data.price_change_percentage_30d_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											) : (
+												<p className="green">
+													{coin.market_data.price_change_percentage_30d_in_currency.eur.toFixed(
+														1,
+													)}
+													%
+												</p>
+											)
 										) : null}
 									</td>
 									<td>
 										{coin.market_data
 											?.price_change_percentage_30d_in_currency ? (
-											<p>
-												{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
-													1,
-												)}
-												%
-											</p>
+											coin.market_data.price_change_percentage_1y_in_currency
+												.usd < 0 ? (
+												<p className="red">
+													{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
+														1,
+													)}
+													%
+												</p>
+											) : (
+												<p className="green">
+													{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
+														1,
+													)}
+													%
+												</p>
+											)
 										) : null}
 									</td>
 								</tr>

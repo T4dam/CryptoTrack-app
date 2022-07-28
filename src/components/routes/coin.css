@@ -67,6 +67,12 @@ th {
 .about .aboutstyle {
 	margin-bottom: 0.3rem;
 }
+.green {
+	color: green;
+}
+.red {
+	color: red;
+}
 
 @media screen and (max-width: 700px) {
 	.coin-container .content {
