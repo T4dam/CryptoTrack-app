@@ -18,13 +18,14 @@ const Coins = (props) => {
 					<p className="hide-mobile">Mkt Cap</p>
 				</div>
 			</div>
-			{props.coins.map((item) => {
-				return (
-					<Link to={`/coin/${item.id}`} element={<item />} key={item.id}>
-						<CoinItem coins={item} />
-					</Link>
-				);
-			})}
+			{props.coins &&
+				props.coins.map((item) => {
+					return (
+						<Link to={`/coin/${item.id}`} element={<item />} key={item.id}>
+							<CoinItem coins={item} />
+						</Link>
+					);
+				})}
 		</div>
 	);
 };

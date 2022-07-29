@@ -4,7 +4,6 @@ import Coins from './components/coins';
 import Navbar from './components/navbar.js';
 import { Routes, Route } from 'react-router-dom';
 import Coin from './components/routes/coin';
-import Hero from './components/hero/index';
 
 function App() {
 	const [coin, setCoin] = useState([]);
