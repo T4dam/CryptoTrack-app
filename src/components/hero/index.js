@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Trending from './trending';
+import CoinConteiner from './coin-conteiner';
 import './hero.css';
 
 const Hero = () => {
@@ -21,8 +21,13 @@ const Hero = () => {
 			});
 	}, []);
 	return (
-		<div className="container">
-			<Trending coins={coin}></Trending>
+		<div className="container flex">
+			<CoinConteiner coins={coin} title={'Trending'} number={3}></CoinConteiner>
+			<CoinConteiner
+				coins={coin}
+				title={'Todays Gainers'}
+				number={3}
+			></CoinConteiner>
 		</div>
 	);
 };

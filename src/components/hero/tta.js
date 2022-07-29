@@ -1,6 +1,6 @@
 import React from 'react';
 import './hero.css';
-import TrendingCardRow from './trending-card-row';
+import CoinCard from './coin-card';
 
 const Trending = ({ coins }) => {
 	return (
@@ -11,10 +11,10 @@ const Trending = ({ coins }) => {
 			</div>
 			<div className="flex-map">
 				{coins.coins &&
-					coins.coins.map((item) => {
+					coins.coins.slice(3).map((item) => {
 						// prettier-ignore
 						return (<>
-                        <TrendingCardRow key={item.item.id}
+                        <CoinCard key={item.item.id}
 
                         number={item.item.market_cap_rank}
                         image={item.item.small}

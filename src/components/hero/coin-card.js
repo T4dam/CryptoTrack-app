@@ -1,7 +1,7 @@
 import React from 'react';
 import './hero.css';
 
-const TrendingCardRow = ({ number, image, name, ticker, price }) => {
+const CoinCard = ({ number, image, name, ticker, price }) => {
 	return (
 		<div className="coin-wrapper">
 			<div className="grid">
@@ -15,4 +15,4 @@ const TrendingCardRow = ({ number, image, name, ticker, price }) => {
 	);
 };
 
-export default TrendingCardRow;
+export default CoinCard;
