@@ -10,9 +10,10 @@
 	/* background-color: #f8f8f9; */
 	box-shadow: 0 0 2px #18191b;
 	border-radius: 8px;
-	margin: 2em 1rem;
+	margin: 0rem 1rem;
 	padding: 0.7rem 1rem;
-	width: 50%;
+	width: 100%;
+	gap: 0.4rem;
 }
 /* .flex-map {
 	display: flex;
@@ -41,19 +42,27 @@
 	flex-direction: row;
 	justify-content: space-between;
 }
+.title-flex {
+	display: flex;
+	justify-content: space-between;
+}
 
 .opacity {
 	opacity: 0.3;
 }
 
-.title {
-	margin-bottom: rem;
-}
 .scale {
 	transform: scale(0.7);
 }
 @media screen and (max-width: 720px) {
 	.hide-mobile {
 		display: none;
+	}
+	.flex {
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.wrapper {
+		width: auto;
 	}
 }

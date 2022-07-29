@@ -5,7 +5,7 @@ import CoinCard from './coin-card';
 const CoinConteiner = ({ coins, number, title }) => {
 	return (
 		<div className="wrapper">
-			<div className="title flex">
+			<div className="title-flex">
 				<h3>{title}</h3>
 				<h3 className="opacity">Price/BTC</h3>
 			</div>

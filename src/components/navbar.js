@@ -7,7 +7,7 @@ const Navbar = () => {
 	return (
 		<Link to="/">
 			<div>
-				<div className="navbar">
+				<div className="navbar mb-2">
 					<FaCoins className="icon" />
 					<h1>
 						Coin<span className="color">Track</span>
