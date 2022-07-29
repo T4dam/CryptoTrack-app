@@ -53,6 +53,10 @@ img {
 	background-color: rgb(240, 240, 253) !important;
 	/* border-radius: 4px; */
 }
+a {
+	text-decoration: none;
+	color: rgb(78, 44, 124);
+}
 @media screen and (max-width: 720px) {
 	.hide-mobile {
 		display: none;
