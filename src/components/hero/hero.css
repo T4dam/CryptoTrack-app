@@ -2,3 +2,58 @@
 	max-width: 1140px;
 	margin: auto;
 }
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	/* background-color: #f8f8f9; */
+	box-shadow: 0 0 2px #18191b;
+	border-radius: 8px;
+	margin: 2em 1rem;
+	padding: 0.7rem 1rem;
+	width: 50%;
+}
+/* .flex-map {
+	display: flex;
+	flex-direction: column;
+} */
+.coin-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 4;
+}
+.grid {
+	display: grid;
+	grid-template-columns: 40px 50px auto auto;
+	gap: 0.5rem;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.opacity {
+	opacity: 0.3;
+}
+
+.title {
+	margin-bottom: rem;
+}
+.scale {
+	transform: scale(0.7);
+}
+@media screen and (max-width: 720px) {
+	.hide-mobile {
+		display: none;
+	}
+}
