@@ -4,7 +4,10 @@ import './coins.css';
 const CoinItem = (props) => {
 	return (
 		<div>
-			<div className="coin-row">
+			<div
+				style={{ backgroundColor: props.color }}
+				className="coin-row maincoinhover"
+			>
 				<p>{props.coins.market_cap_rank}</p>
 				<div className="img-symbol">
 					<img src={props.coins.image} alt="" />

@@ -21,7 +21,7 @@ const CoinConteiner = ({ coins, number, title, startnumber }) => {
 							image={item.item.small}
 							name={item.item.name}
 							ticker={item.item.symbol}
-							price={item.item.price_btc.toFixed(6)}
+							price={item.item.price_btc.toFixed(10)}
 							/>
 						</Link>
                         
