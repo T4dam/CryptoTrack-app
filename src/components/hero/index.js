@@ -22,11 +22,17 @@ const Hero = () => {
 	}, []);
 	return (
 		<div className="container flex">
-			<CoinConteiner coins={coin} title={'Trending'} number={3}></CoinConteiner>
+			<CoinConteiner
+				coins={coin}
+				title={'Trending'}
+				number={4}
+				startnumber={0}
+			></CoinConteiner>
 			<CoinConteiner
 				coins={coin}
 				title={'Todays Gainers'}
-				number={3}
+				number={7}
+				startnumber={3}
 			></CoinConteiner>
 		</div>
 	);
