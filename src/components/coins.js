@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 // import CoinItem from './coinItem';
 import './coins.css';
 import Hero from './hero';
+import { MdArrowDropDown } from 'react-icons/md';
+import { IoMdArrowDropup } from 'react-icons/io';
 
 const Coins = (props) => {
 	return (
@@ -47,7 +49,21 @@ const Coins = (props) => {
 													<p>{item.symbol.toUpperCase()}</p>
 												</td>
 												<td>{item.current_price.toLocaleString()} €</td>
-												{item.price_change_percentage_24h < 0 ? (
+												<td
+													className={
+														item.price_change_percentage_24h < 0
+															? 'red'
+															: 'green'
+													}
+												>
+													{item.price_change_percentage_24h < 0 ? (
+														<MdArrowDropDown />
+													) : (
+														<IoMdArrowDropup />
+													)}
+													{item.price_change_percentage_24h.toFixed(2)}
+												</td>
+												{/* {item.price_change_percentage_24h < 0 ? (
 													<td className="red">
 														{item.price_change_percentage_24h.toFixed(2)}
 													</td>
@@ -55,7 +71,7 @@ const Coins = (props) => {
 													<td className="green">
 														{item.price_change_percentage_24h.toFixed(2)}
 													</td>
-												)}
+												)} */}
 
 												<td className="hide-mobile">
 													{item.total_volume.toLocaleString()}
