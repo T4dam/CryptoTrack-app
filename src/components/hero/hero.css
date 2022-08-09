@@ -27,7 +27,7 @@
 }
 .grid {
 	display: grid;
-	grid-template-columns: 40px 50px auto auto;
+	grid-template-columns: 40px 50px 1fr auto;
 	gap: 0.5rem;
 }
 

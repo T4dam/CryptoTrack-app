@@ -43,11 +43,11 @@ th {
 	padding: 8px;
 	text-align: center;
 }
-th {
+/* th {
 	color: white;
 	background-color: #333;
 	border-radius: 3px;
-}
+} */
 .stats {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

@@ -2,13 +2,32 @@
 	max-width: 1140px;
 	margin: auto;
 }
-.heading {
+/* th {
+	background-color: aqua;
+} */
+.tablehead {
 	/* background-color: #f8f8f9; */
-	box-shadow: 0 0 2px #18191b;
+	/* box-shadow: 0 0 2px #18191b; */
+	border: 1px solid black;
 	border-radius: 8px;
 	margin: 2em 1rem;
-	padding: 0.7rem 0rem;
+	/* padding: 0.7rem 0rem; */
 	font-weight: 700;
+}
+.fullwidth {
+	width: 100%;
+	text-align: center;
+}
+tr {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr;
+	text-align: center;
+}
+td {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .coin-name {
