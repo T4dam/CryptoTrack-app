@@ -32,7 +32,6 @@ const Coins = (props) => {
 								<th>Mkt Cap</th>
 							</tr>
 						</thead>
-						<hr />
 						<tbody>
 							{props.coins &&
 								props.coins.map((item) => {

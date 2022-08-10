@@ -5,7 +5,6 @@ import './hero.css';
 
 const Hero = () => {
 	const [coin, setCoin] = useState([]);
-	console.log(coin);
 
 	const url = 'https://api.coingecko.com/api/v3/search/trending';
 
@@ -14,7 +13,6 @@ const Hero = () => {
 			.get(url)
 			.then((res) => {
 				setCoin(res.data);
-				console.log(res.data.coins);
 			})
 			.catch((error) => {
 				console.log(error);
