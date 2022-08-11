@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCoins } from 'react-icons/fa';
+import { RiCoinsFill } from 'react-icons/ri';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const Navbar = () => {
 		<Link to="/">
 			<div>
 				<div className="navbar mb-2">
-					<FaCoins className="icon" />
+					<RiCoinsFill className="icon" />
 					<h1>
 						Coin<span className="color">Track</span>
 					</h1>
