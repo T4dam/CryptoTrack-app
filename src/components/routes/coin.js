@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './coin.css';
 import DOMPurify from 'dompurify';
+import Cryptochart from '../chart/cryptochart';
 
 const CoinDetailPage = ({ coin }) => {
 	const { detail } = coin;
@@ -37,6 +38,9 @@ const CoinDetailPage = ({ coin }) => {
 									) : null}
 								</div>
 							</div>
+						</div>
+						<div className="content">
+							<Cryptochart />
 						</div>
 						<div className="hide-mobile">
 							<div className="content">

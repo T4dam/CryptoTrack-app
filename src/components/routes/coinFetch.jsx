@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CoinDetailPage from './coin';
 import coinGecko from '../../apis/coinGecko';
+import Cryptochart from '../chart/cryptochart';
 
 const CoinFetch = () => {
 	const [coin, setCoin] = useState([]);
@@ -12,9 +13,10 @@ const CoinFetch = () => {
 	// const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
 
 	const formatData = (data) => {
+		console.log({ data: data });
 		return data.map((el) => {
 			return {
-				t: el[0],
+				x: el[0],
 				y: el[1].toFixed(2),
 			};
 		});
@@ -42,7 +44,12 @@ const CoinFetch = () => {
 						days: '365',
 					},
 				}),
-				coinGecko.get(`/coins/${params.coinId}`),
+				coinGecko.get(`/coins/${params.coinId}`, {
+					params: {
+						vs_currency: 'eur',
+						id: coin,
+					},
+				}),
 			]);
 
 			setCoin({
@@ -51,6 +58,7 @@ const CoinFetch = () => {
 				year: formatData(year.data.prices),
 				detail: detail.data,
 			});
+			console.log({ week: week });
 			setIsLoading(false);
 			console.log(coin);
 		};
@@ -62,7 +70,12 @@ const CoinFetch = () => {
 		if (isLoading) {
 			return <div className="">Leading...</div>;
 		}
-		return <CoinDetailPage coin={coin} />;
+		return (
+			<>
+				<CoinDetailPage coin={coin} />
+				{/* <Cryptochart coin={coin} /> */}
+			</>
+		);
 	};
 	return renderData();
 };
