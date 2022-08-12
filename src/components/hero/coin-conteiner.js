@@ -2,15 +2,19 @@ import React from 'react';
 import './hero.css';
 import CoinCard from './coin-card';
 import { Link } from 'react-router-dom';
+import { ImFire } from 'react-icons/im';
 
-const CoinConteiner = ({ coins, number, title, startnumber }) => {
+const CoinConteiner = ({ coins, number, title, startnumber, icon }) => {
 	return (
 		<div className="wrapper tablehead">
 			<table cellspacing="0">
 				<thead>
 					<tr>
 						<th className="title-flex">
-							<h3>{title}</h3>
+							<h3>
+								<span style={{ paddingRight: '4px' }}>{icon}</span>
+								{title}
+							</h3>
 							<h3 className="opacity">Price</h3>
 						</th>
 					</tr>

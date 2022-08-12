@@ -36,7 +36,18 @@ const Cryptochartsmall = ({ item }) => {
 	if (!response) {
 		return (
 			<div className="wrapper-container mt-8">
-				<div>nera..</div>
+				<div className="img-symbol">
+					<div class="loader">
+						<div class="duo duo1">
+							<div class="dot dot-a"></div>
+							<div class="dot dot-b"></div>
+						</div>
+						<div class="duo duo2">
+							<div class="dot dot-a"></div>
+							<div class="dot dot-b"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}
@@ -63,6 +74,7 @@ const Cryptochartsmall = ({ item }) => {
 			x: {
 				grid: {
 					display: false,
+					drawBorder: false,
 				},
 
 				// Jeigu nurima spleti x asies label

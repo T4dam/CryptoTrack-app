@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CoinConteiner from './coin-conteiner';
 import './hero.css';
+import { ImFire } from 'react-icons/im';
+import { AiFillStar } from 'react-icons/ai';
 
 const Hero = () => {
 	const [coin, setCoin] = useState([]);
@@ -25,12 +27,14 @@ const Hero = () => {
 				title={'Trending'}
 				number={4}
 				startnumber={0}
+				icon={<ImFire />}
 			></CoinConteiner>
 			<CoinConteiner
 				coins={coin}
 				title={'Todays Gainers'}
 				number={7}
 				startnumber={3}
+				icon={<AiFillStar />}
 			></CoinConteiner>
 		</div>
 	);
