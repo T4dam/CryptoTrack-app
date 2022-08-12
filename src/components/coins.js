@@ -34,8 +34,8 @@ const Coins = (props) => {
 								<th>Coin</th>
 								<th>Price</th>
 								<th>24h</th>
-								<th className="hide-mobile">Volume</th>
-								<th className="hide-mobile">Mkt Cap</th>
+								<th className="hide-mobile">Volume (24h)</th>
+								<th className="hide-mobile">Market Cap</th>
 								<th className="hide-mobile">Last 24 hours</th>
 							</tr>
 						</thead>
