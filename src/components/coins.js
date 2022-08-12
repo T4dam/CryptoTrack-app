@@ -6,6 +6,7 @@ import Hero from './hero';
 import { MdArrowDropDown } from 'react-icons/md';
 import { IoMdArrowDropup } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
+import Cryptochartsmall from './chart/cryptoChartSmall';
 
 const Coins = (props) => {
 	const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Coins = (props) => {
 								<th>24h</th>
 								<th className="hide-mobile">Volume</th>
 								<th className="hide-mobile">Mkt Cap</th>
+								<th className="hide-mobile">Last 24 hours</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -53,7 +55,7 @@ const Coins = (props) => {
 										>
 											<td>{item.market_cap_rank}</td>
 											<td className="img-symbol">
-												<img src={item.image} alt="" />
+												<img className="imgsize" src={item.image} alt="" />
 												<p>{item.symbol.toUpperCase()}</p>
 											</td>
 											<td>{item.current_price.toLocaleString()} €</td>
@@ -80,10 +82,13 @@ const Coins = (props) => {
 												)} */}
 
 											<td className="hide-mobile">
-												{item.total_volume.toLocaleString()}
+												{item.total_volume.toLocaleString()} €
 											</td>
 											<td className="hide-mobile">
-												{item.market_cap.toLocaleString()}
+												{item.market_cap.toLocaleString()} €
+											</td>
+											<td className="hide-mobile">
+												<Cryptochartsmall item={item.id} />
 											</td>
 											{/* <CoinItem
 													coins={item}
