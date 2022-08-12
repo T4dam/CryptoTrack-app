@@ -26,7 +26,7 @@ const Coins = (props) => {
 						<p className="hide-mobile">Mkt Cap</p>
 					</div>
 					<hr className="opacity"></hr> */}
-					<table className="fullwidth">
+					<table cellspacing="0" className="fullwidth">
 						<thead>
 							<tr>
 								<th>#</th>
