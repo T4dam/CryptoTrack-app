@@ -10,7 +10,7 @@ const CoinCard = ({ number, image, name, ticker, price }) => {
 				<div className="center">{name}</div>
 				<div className="center opacity hide-mobile">{ticker}</div>
 			</div>
-			<div>{price}</div>
+			<div>{price} ₿</div>
 		</div>
 	);
 };

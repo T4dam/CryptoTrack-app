@@ -5,16 +5,22 @@ import { Link } from 'react-router-dom';
 
 const CoinConteiner = ({ coins, number, title, startnumber }) => {
 	return (
-		<div className="wrapper">
-			<div className="title-flex">
-				<h3>{title}</h3>
-				<h3 className="opacity">Price/BTC</h3>
-			</div>
-			<div className="mx">
-				{coins.coins &&
-					coins.coins.slice(startnumber, number).map((item) => {
-						// prettier-ignore
-						return (<>
+		<div className="wrapper tablehead">
+			<table cellspacing="0">
+				<thead>
+					<tr>
+						<th className="title-flex">
+							<h3>{title}</h3>
+							<h3 className="opacity">Price</h3>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{/* <div className="mx"> */}
+					{coins.coins &&
+						coins.coins.slice(startnumber, number).map((item) => {
+							// prettier-ignore
+							return (<>
                         <Link to={`/coin/${item.id}`} element={<item />} key={item.item.id}>
 							<CoinCard
 							number={item.item.market_cap_rank}
@@ -28,8 +34,10 @@ const CoinConteiner = ({ coins, number, title, startnumber }) => {
                         
                         </>
                         )
-					})}
-			</div>
+						})}
+					{/* </div> */}
+				</tbody>
+			</table>
 		</div>
 	);
 };

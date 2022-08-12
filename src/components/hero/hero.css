@@ -8,10 +8,10 @@
 	justify-content: space-between;
 
 	/* background-color: #f8f8f9; */
-	box-shadow: 0 0 2px #18191b;
-	border-radius: 8px;
+	/* box-shadow: 0 0 2px #18191b; */
+	/* border-radius: 8px; */
 	margin: 0rem 1rem;
-	padding: 0.7rem 1rem;
+	/* padding: 0.7rem 1rem; */
 	width: 100%;
 	gap: 0.4rem;
 }
@@ -24,6 +24,8 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 4;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .grid {
 	display: grid;
@@ -60,7 +62,7 @@
 	cursor: pointer;
 	background-color: ghostwhite;
 	border-radius: 4px;
-	padding: 0 6px;
+	/* padding: 0 6px; */
 }
 
 @media screen and (max-width: 720px) {
