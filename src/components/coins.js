@@ -5,8 +5,13 @@ import './coins.css';
 import Hero from './hero';
 import { MdArrowDropDown } from 'react-icons/md';
 import { IoMdArrowDropup } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 const Coins = (props) => {
+	const navigate = useNavigate();
+	const goRouteId = (item) => {
+		navigate(`/coin/${item.id}`);
+	};
 	return (
 		<div className="container">
 			<Hero />
@@ -28,41 +33,43 @@ const Coins = (props) => {
 								<th>Coin</th>
 								<th>Price</th>
 								<th>24h</th>
-								<th>Volume</th>
-								<th>Mkt Cap</th>
+								<th className="hide-mobile">Volume</th>
+								<th className="hide-mobile">Mkt Cap</th>
 							</tr>
 						</thead>
 						<tbody>
 							{props.coins &&
 								props.coins.map((item) => {
 									return (
-										<Link
-											to={`/coin/${item.id}`}
-											element={<item />}
+										// <Link
+										// 	to={`/coin/${item.id}`}
+										// 	element={<item />}
+										// 	key={item.id}
+										// >
+										<tr
+											onClick={() => goRouteId(item)}
 											key={item.id}
+											className="maincoinhover"
 										>
-											<tr className="maincoinhover">
-												<td>{item.market_cap_rank}</td>
-												<td className="img-symbol">
-													<img src={item.image} alt="" />
-													<p>{item.symbol.toUpperCase()}</p>
-												</td>
-												<td>{item.current_price.toLocaleString()} €</td>
-												<td
-													className={
-														item.price_change_percentage_24h < 0
-															? 'red'
-															: 'green'
-													}
-												>
-													{item.price_change_percentage_24h < 0 ? (
-														<MdArrowDropDown />
-													) : (
-														<IoMdArrowDropup />
-													)}
-													{item.price_change_percentage_24h.toFixed(2)}
-												</td>
-												{/* {item.price_change_percentage_24h < 0 ? (
+											<td>{item.market_cap_rank}</td>
+											<td className="img-symbol">
+												<img src={item.image} alt="" />
+												<p>{item.symbol.toUpperCase()}</p>
+											</td>
+											<td>{item.current_price.toLocaleString()} €</td>
+											<td
+												className={
+													item.price_change_percentage_24h < 0 ? 'red' : 'green'
+												}
+											>
+												{item.price_change_percentage_24h < 0 ? (
+													<MdArrowDropDown />
+												) : (
+													<IoMdArrowDropup />
+												)}
+												{item.price_change_percentage_24h.toFixed(2)}
+											</td>
+											{/* {item.price_change_percentage_24h < 0 ? (
 													<td className="red">
 														{item.price_change_percentage_24h.toFixed(2)}
 													</td>
@@ -72,19 +79,19 @@ const Coins = (props) => {
 													</td>
 												)} */}
 
-												<td className="hide-mobile">
-													{item.total_volume.toLocaleString()}
-												</td>
-												<td className="hide-mobile">
-													{item.market_cap.toLocaleString()}
-												</td>
-												{/* <CoinItem
+											<td className="hide-mobile">
+												{item.total_volume.toLocaleString()}
+											</td>
+											<td className="hide-mobile">
+												{item.market_cap.toLocaleString()}
+											</td>
+											{/* <CoinItem
 													coins={item}
 													rank=
 													color={index % 2 ? '#F9FAF9' : '#ffffff'}
 												/> */}
-											</tr>
-										</Link>
+										</tr>
+										// </Link>
 									);
 								})}
 						</tbody>

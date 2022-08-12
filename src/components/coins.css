@@ -18,7 +18,7 @@
 	width: 100%;
 	text-align: center;
 }
-tr {
+/* tr {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr;
@@ -28,7 +28,7 @@ td {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+} */
 
 .coin-name {
 	margin-left: -4rem;
@@ -52,6 +52,7 @@ img {
 .img-symbol {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 /* .coin-row:hover {
