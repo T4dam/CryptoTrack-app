@@ -1,5 +1,5 @@
 import React from 'react';
-import './coin.css';
+import './coindetail.css';
 import DOMPurify from 'dompurify';
 import Cryptochart from '../chart/cryptochart';
 

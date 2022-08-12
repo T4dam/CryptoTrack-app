@@ -38,11 +38,7 @@
 .table {
 	margin: 0.5rem 0;
 }
-td,
-th {
-	padding: 8px;
-	text-align: center;
-}
+
 /* th {
 	color: white;
 	background-color: #333;

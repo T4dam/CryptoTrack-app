@@ -54,9 +54,11 @@ const Coins = (props) => {
 											className="maincoinhover"
 										>
 											<td>{item.market_cap_rank}</td>
-											<td className="img-symbol">
-												<img className="imgsize" src={item.image} alt="" />
-												<p>{item.symbol.toUpperCase()}</p>
+											<td>
+												<div className="img-symbol">
+													<img className="imgsize" src={item.image} alt="" />
+													<p>{item.symbol.toUpperCase()}</p>
+												</div>
 											</td>
 											<td>{item.current_price.toLocaleString()} €</td>
 											<td
