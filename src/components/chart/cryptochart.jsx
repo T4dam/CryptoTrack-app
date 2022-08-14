@@ -48,6 +48,11 @@ const Cryptochart = ({ coin }) => {
 	// const { week } = coin;
 	const options = {
 		responsive: true,
+		plugins: {
+			legend: {
+				display: true,
+			},
+		},
 		scales: {
 			x: {
 				grid: {
