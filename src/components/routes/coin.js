@@ -260,7 +260,7 @@ const CoinDetailPage = ({ coin }) => {
 								</div>
 							</div>
 						</div>
-						<div className="content">
+						<div className="content mb-3 ">
 							<div className="about">
 								<h3 className="aboutstyle">About</h3>
 								<p

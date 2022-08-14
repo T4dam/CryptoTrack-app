@@ -80,6 +80,12 @@
 	text-align: left;
 	text-transform: uppercase;
 }
+.mb-3 {
+	margin-bottom: 10rem !important;
+}
+.bg {
+	background-color: #ffff;
+}
 .stats .row {
 	display: flex;
 	justify-content: space-between;
