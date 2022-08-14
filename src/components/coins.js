@@ -18,16 +18,7 @@ const Coins = (props) => {
 			<Hero />
 			<div>
 				<div className="tablehead">
-					{/* <div className="bar">
-						<p>#</p>
-						<p className="coin-name">Coin</p>
-						<p>Price</p>
-						<p>24h</p>
-						<p className="hide-mobile">Volume</p>
-						<p className="hide-mobile">Mkt Cap</p>
-					</div>
-					<hr className="opacity"></hr> */}
-					<table cellspacing="0" className="fullwidth">
+					<table cellspacing="0" className="fullwidth text-style">
 						<thead>
 							<tr>
 								<th>#</th>

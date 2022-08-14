@@ -4,7 +4,7 @@ import './hero.css';
 const CoinCard = ({ number, image, name, ticker, price }) => {
 	return (
 		// <Link to={`/coin/${item.id}`} key={item.item.id}>
-		<div className="coin-wrapper coinshover padd ">
+		<div className="coin-wrapper coinshover padd text-style ">
 			<div className="grid ">
 				<div className="center hide-mobile">{number}</div>
 				<img className="center scale" src={image} alt="" />
