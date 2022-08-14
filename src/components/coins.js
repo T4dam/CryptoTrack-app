@@ -60,18 +60,25 @@ const Coins = (props) => {
 													<p>{item.symbol.toUpperCase()}</p>
 												</div>
 											</td>
-											<td>{item.current_price.toLocaleString()} €</td>
+											<td className="">
+												<span className="flexSide">
+													{item.current_price.toLocaleString()}{' '}
+													<span className="padding-left">€</span>
+												</span>
+											</td>
 											<td
 												className={
 													item.price_change_percentage_24h < 0 ? 'red' : 'green'
 												}
 											>
-												{item.price_change_percentage_24h < 0 ? (
-													<MdArrowDropDown />
-												) : (
-													<IoMdArrowDropup />
-												)}
-												{item.price_change_percentage_24h.toFixed(2)}
+												<span className="flexSide">
+													{item.price_change_percentage_24h < 0 ? (
+														<MdArrowDropDown />
+													) : (
+														<IoMdArrowDropup />
+													)}
+													{item.price_change_percentage_24h.toFixed(2)}
+												</span>
 											</td>
 											{/* {item.price_change_percentage_24h < 0 ? (
 													<td className="red">

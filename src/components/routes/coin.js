@@ -2,17 +2,41 @@ import React from 'react';
 import './coindetail.css';
 import DOMPurify from 'dompurify';
 import Cryptochart from '../chart/cryptochart';
+import { MdArrowDropDown } from 'react-icons/md';
+import { IoMdArrowDropup } from 'react-icons/io';
 
 const CoinDetailPage = ({ coin }) => {
 	const { detail } = coin;
 	console.log(detail);
+
 	const renderData = () => {
 		if (detail) {
+			const data = [
+				{
+					hour: detail.market_data.price_change_percentage_1h_in_currency.eur,
+				},
+				{
+					day: detail.market_data.price_change_percentage_24h_in_currency.eur,
+				},
+				{
+					week: detail.market_data.price_change_percentage_7d_in_currency.eur,
+				},
+				{
+					twoWeeks:
+						detail.market_data.price_change_percentage_14d_in_currency.eur,
+				},
+				{
+					month: detail.market_data.price_change_percentage_30d_in_currency.eur,
+				},
+				{
+					year: detail.market_data.price_change_percentage_1y_in_currency.eur,
+				},
+			];
 			return (
 				<div>
 					<div className="coin-container">
-						<div className="content">
-							<h1>{detail.name}</h1>
+						<div className="content background">
+							<h1 className="headertext">{detail.name}</h1>
 						</div>
 						<div className="content">
 							<div className="rank">
@@ -21,7 +45,7 @@ const CoinDetailPage = ({ coin }) => {
 								</span>
 							</div>
 							<div className="info">
-								<div className="coin-heading">
+								<div className="coin-heading headertext">
 									{detail.image ? (
 										<img src={detail.image.small} alt="" />
 									) : null}
@@ -30,7 +54,7 @@ const CoinDetailPage = ({ coin }) => {
 										<p>{detail.symbol.toUpperCase()}/EUR</p>
 									) : null}
 								</div>
-								<div className="coin-price">
+								<div className="coin-price headertext">
 									{detail.market_data?.current_price ? (
 										<h1>
 											{detail.market_data.current_price.eur.toLocaleString()} €
@@ -57,131 +81,141 @@ const CoinDetailPage = ({ coin }) => {
 									</thead>
 									<tbody>
 										<tr>
-											<td>
-												{detail.market_data
-													?.price_change_percentage_1h_in_currency ? (
+											{data.map((item) => {
+												console.log({ mapas: item.day });
+												return (
+													<td
+														className={
+															Number(Object.keys(item)[1]) < 0 ? 'red' : 'green'
+														}
+													>
+														{data.forEach((x) => {
+															console.log({ x: x });
+															return Number(x);
+														}) < 0 ? (
+															<MdArrowDropDown />
+														) : (
+															<IoMdArrowDropup />
+														)}
+														{Number(item.hour).toFixed(1)} %
+													</td>
+												);
+											})}
+										</tr>
+										<tr>
+											<td
+												className={
 													detail.market_data
-														.price_change_percentage_1h_in_currency < 0 ? (
-														<p className="red">
-															{detail.market_data.price_change_percentage_1h_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													) : (
-														<p className="green">
-															{detail.market_data.price_change_percentage_1h_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													)
-												) : null}
+														.price_change_percentage_1h_in_currency.eur < 0
+														? 'red'
+														: 'green'
+												}
+											>
+												{detail.market_data
+													.price_change_percentage_1h_in_currency.eur < 0 ? (
+													<MdArrowDropDown />
+												) : (
+													<IoMdArrowDropup />
+												)}
+												{detail.market_data.price_change_percentage_1h_in_currency.eur.toFixed(
+													1,
+												)}{' '}
+												%
 											</td>
-											<td>
-												{detail.market_data
-													?.price_change_percentage_24h_in_currency ? (
+											<td
+												className={
 													detail.market_data
-														.price_change_percentage_24h_in_currency.eur < 0 ? (
-														<p className="red">
-															{detail.market_data.price_change_percentage_24h_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													) : (
-														<p className="green">
-															{detail.market_data.price_change_percentage_24h_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													)
-												) : null}
+														.price_change_percentage_24h_in_currency.eur < 0
+														? 'red'
+														: 'green'
+												}
+											>
+												{detail.market_data
+													.price_change_percentage_24h_in_currency.eur < 0 ? (
+													<MdArrowDropDown />
+												) : (
+													<IoMdArrowDropup />
+												)}
+												{detail.market_data.price_change_percentage_24h_in_currency.eur.toFixed(
+													1,
+												)}{' '}
+												%
 											</td>
-											<td>
-												{detail.market_data
-													?.price_change_percentage_7d_in_currency ? (
+											<td
+												className={
 													detail.market_data
-														.price_change_percentage_7d_in_currency.eur < 0 ? (
-														<p className="red">
-															{detail.market_data.price_change_percentage_7d_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													) : (
-														<p className="green">
-															{detail.market_data.price_change_percentage_7d_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													)
-												) : null}
+														.price_change_percentage_7d_in_currency.eur < 0
+														? 'red'
+														: 'green'
+												}
+											>
+												{detail.market_data
+													.price_change_percentage_7d_in_currency.eur < 0 ? (
+													<MdArrowDropDown />
+												) : (
+													<IoMdArrowDropup />
+												)}
+												{detail.market_data.price_change_percentage_7d_in_currency.eur.toFixed(
+													1,
+												)}{' '}
+												%
 											</td>
-											<td>
-												{detail.market_data
-													?.price_change_percentage_14d_in_currency ? (
+											<td
+												className={
 													detail.market_data
-														.price_change_percentage_14d_in_currency.eur < 0 ? (
-														<p className="red">
-															{detail.market_data.price_change_percentage_14d_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													) : (
-														<p className="green">
-															{detail.market_data.price_change_percentage_14d_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													)
-												) : null}
+														.price_change_percentage_14d_in_currency.eur < 0
+														? 'red'
+														: 'green'
+												}
+											>
+												{detail.market_data
+													.price_change_percentage_14d_in_currency.eur < 0 ? (
+													<MdArrowDropDown />
+												) : (
+													<IoMdArrowDropup />
+												)}
+												{detail.market_data.price_change_percentage_14d_in_currency.eur.toFixed(
+													1,
+												)}{' '}
+												%
 											</td>
-											<td>
-												{detail.market_data
-													?.price_change_percentage_30d_in_currency ? (
+											<td
+												className={
 													detail.market_data
-														.price_change_percentage_30d_in_currency.eur < 0 ? (
-														<p className="red">
-															{detail.market_data.price_change_percentage_30d_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													) : (
-														<p className="green">
-															{detail.market_data.price_change_percentage_30d_in_currency.eur.toFixed(
-																1,
-															)}
-															%
-														</p>
-													)
-												) : null}
+														.price_change_percentage_30d_in_currency.eur < 0
+														? 'red'
+														: 'green'
+												}
+											>
+												{detail.market_data
+													.price_change_percentage_30d_in_currency.eur < 0 ? (
+													<MdArrowDropDown />
+												) : (
+													<IoMdArrowDropup />
+												)}
+												{detail.market_data.price_change_percentage_30d_in_currency.eur.toFixed(
+													1,
+												)}{' '}
+												%
 											</td>
-											<td>
-												{detail.market_data
-													?.price_change_percentage_30d_in_currency ? (
+											<td
+												className={
 													detail.market_data
-														.price_change_percentage_1y_in_currency.usd < 0 ? (
-														<p className="red">
-															{detail.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
-																1,
-															)}
-															%
-														</p>
-													) : (
-														<p className="green">
-															{detail.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
-																1,
-															)}
-															%
-														</p>
-													)
-												) : null}
+														.price_change_percentage_1y_in_currency.eur < 0
+														? 'red'
+														: 'green'
+												}
+											>
+												{detail.market_data
+													.price_change_percentage_1y_in_currency.eur < 0 ? (
+													<MdArrowDropDown />
+												) : (
+													<IoMdArrowDropup />
+												)}
+												{detail.market_data.price_change_percentage_1y_in_currency.eur.toFixed(
+													1,
+												)}{' '}
+												%
 											</td>
 										</tr>
 									</tbody>
@@ -230,6 +264,7 @@ const CoinDetailPage = ({ coin }) => {
 							<div className="about">
 								<h3 className="aboutstyle">About</h3>
 								<p
+									className="cryptotext"
 									dangerouslySetInnerHTML={{
 										__html: DOMPurify.sanitize(
 											detail.description ? detail.description.en : '',

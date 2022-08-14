@@ -16,6 +16,12 @@
 	margin: 2em 1rem;
 	/* padding: 0.7rem 0rem; */
 	font-weight: 700;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(10.5px);
+	-webkit-backdrop-filter: blur(10.5px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 th {
@@ -35,11 +41,11 @@ th {
 	text-align: center;
 }
 td {
-	padding-top: 1.25rem;
-	padding-bottom: 1.25rem;
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
-	background-color: #ffffff;
+	/* background-color: #ffffff; */
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 	border-bottom: 1px solid #e5e7eb;
@@ -124,8 +130,15 @@ a {
 	margin: 0 auto;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 840px) {
 	.hide-mobile {
 		display: none;
+	}
+}
+@media screen and (max-width: 375px) {
+	td,
+	th {
+		padding-left: 0.35rem;
+		padding-right: 0.35rem;
 	}
 }
