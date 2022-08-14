@@ -8,10 +8,10 @@ const Navbar = () => {
 		<Link to="/">
 			<div>
 				<div className="navbar mb-2">
-					<span className="">
+					<span className="size">
 						<RiCoinsFill className="icon" />
 					</span>
-					<h1>
+					<h1 className="">
 						Coin<span className="color">Track</span>
 					</h1>
 				</div>
