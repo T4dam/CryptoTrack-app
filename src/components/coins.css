@@ -117,8 +117,9 @@ img {
 	/* transform: scale(1.04); */
 	transition: 0.3s ease-in-out;
 	cursor: pointer;
-	background-color: rgb(49, 49, 199) !important;
+	background-color: rgb(231, 249, 255);
 	/* border-radius: 4px; */
+	background: -webkit-linear-gradient(#f3fcff, ghostwhite);
 }
 a {
 	text-decoration: none;

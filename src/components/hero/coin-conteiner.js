@@ -6,11 +6,11 @@ import { ImFire } from 'react-icons/im';
 
 const CoinConteiner = ({ coins, number, title, startnumber, icon }) => {
 	return (
-		<div className="wrapper tablehead">
+		<div className="wrapper tablehead ">
 			<table cellspacing="0">
 				<thead>
 					<tr>
-						<th className="title-flex">
+						<th className="title-flex text-style">
 							<h3>
 								<span style={{ paddingRight: '4px' }}>{icon}</span>
 								{title}

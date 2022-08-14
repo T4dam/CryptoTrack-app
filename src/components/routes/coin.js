@@ -36,7 +36,7 @@ const CoinDetailPage = ({ coin }) => {
 				<div>
 					<div className="coin-container">
 						<div className="content background">
-							<h1 className="headertext">{detail.name}</h1>
+							<h2 className="headertext">{detail.name}</h2>
 						</div>
 						<div className="content">
 							<div className="rank">
