@@ -3,6 +3,7 @@ import './hero.css';
 
 const CoinCard = ({ number, image, name, ticker, price }) => {
 	return (
+		// <Link to={`/coin/${item.id}`} key={item.item.id}>
 		<div className="coin-wrapper coinshover padd ">
 			<div className="grid ">
 				<div className="center hide-mobile">{number}</div>
@@ -14,6 +15,7 @@ const CoinCard = ({ number, image, name, ticker, price }) => {
 				{price} <span className="padding-left">₿</span>
 			</div>
 		</div>
+		// </Link>
 	);
 };
 

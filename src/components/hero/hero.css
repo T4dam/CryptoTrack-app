@@ -81,20 +81,23 @@
 	transform: scale(1.04);
 	transition: 0.3s ease-in-out;
 	cursor: pointer;
-	background-color: ghostwhite;
+	/* background-color: ghostwhite; */
+	background: -webkit-linear-gradient(#eefafe, rgb(242, 242, 251));
 	border-radius: 4px;
 	/* padding: 0 6px; */
 }
 
 @media screen and (max-width: 840px) {
-	.hide-mobile {
-		display: none;
-	}
 	.flex {
 		flex-direction: column;
 		gap: 2rem;
 	}
 	.wrapper {
 		width: auto;
+	}
+}
+@media screen and (max-width: 425px) {
+	.hide-mobile {
+		display: none;
 	}
 }

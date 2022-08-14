@@ -3,6 +3,7 @@ import useAxios from '../../apis/useAxios';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import './../coins.css';
+import { smallChartOptions } from './chartConfigs';
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -57,60 +58,8 @@ const Cryptochartsmall = ({ item }) => {
 		y: value[1].toFixed(2),
 	}));
 	// const { week } = coin;
-	const options = {
-		maintainAspectRatio: false,
-		aspectRatio: (1, 2),
-		responsive: true,
+	const options = smallChartOptions;
 
-		plugins: {
-			legend: {
-				display: false,
-			},
-			tooltip: {
-				enabled: false,
-			},
-		},
-		scales: {
-			x: {
-				grid: {
-					display: false,
-					drawBorder: false,
-				},
-
-				// Jeigu nurima spleti x asies label
-				ticks: {
-					display: false,
-				},
-			},
-			y: {
-				ticks: {
-					callback: function (value) {
-						return value + ' ' + '€';
-					},
-					display: false,
-				},
-				grid: {
-					display: false,
-					drawBorder: false,
-				},
-			},
-		},
-	};
-	console.log({ coinChartData: coinChartData });
-
-	// const data = {
-	// 	labels: coinChartData.map((value) => moment(value.x).format('MMM DD')),
-	// 	datasets: [
-	// 		{
-	// 			fill: true,
-	// 			label: coinId + ' ' + 'price',
-	// 			data: coinChartData.map((val) => val.y),
-	// 			borderColor: 'rgb(50,205,50)',
-	// 			backgroundColor: 'rgba(50,205,50, 0.5)',
-	// 			pointRadius: 0,
-	// 		},
-	// 	],
-	// };
 	const data = {
 		labels: coinChartData.map((value) => moment(value.x).format('MMM DD')),
 		datasets: [

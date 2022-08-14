@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import useAxios from '../../apis/useAxios';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
+import { bigChartOptions } from './chartConfigs';
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -45,51 +46,9 @@ const Cryptochart = ({ coin }) => {
 		x: value[0],
 		y: value[1].toFixed(2),
 	}));
-	// const { week } = coin;
-	const options = {
-		responsive: true,
-		plugins: {
-			legend: {
-				display: true,
-			},
-		},
-		scales: {
-			x: {
-				grid: {
-					display: false,
-				},
-				// Jeigu nurima spleti x asies label
-				// ticks: {
-				// 	display: false,
-				// },
-			},
-			y: {
-				ticks: {
-					callback: function (value) {
-						return value + ' ' + '€';
-					},
-				},
-				grid: {
-					display: false,
-				},
-			},
-		},
-	};
-	console.log({ coinChartData: coinChartData });
 
-	// const data = {
-	// 	labels: coinChartData.map((value) => moment(value.x).format('MMM DD')),
-	// 	datasets: [
-	// 		{
-	// 			fill: true,
-	// 			label: coinId + ' ' + 'price',
-	// 			data: coinChartData.map((val) => val.y),
-	// 			borderColor: 'rgb(50,205,50)',
-	// 			backgroundColor: 'rgba(50,205,50, 0.5)',
-	// 			pointRadius: 0,
-	// 		},
-	// 	],
-	// };
+	const options = bigChartOptions;
+
 	const data = {
 		labels: coinChartData.map((value) => moment(value.x).format('MMM DD')),
 		datasets: [

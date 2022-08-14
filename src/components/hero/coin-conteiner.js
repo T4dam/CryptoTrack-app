@@ -25,7 +25,7 @@ const CoinConteiner = ({ coins, number, title, startnumber, icon }) => {
 						coins.coins.slice(startnumber, number).map((item) => {
 							// prettier-ignore
 							return (<>
-                        <Link to={`/coin/${item.id}`} element={<item />} key={item.item.id}>
+                        <Link to={`/coin/${item.item.id}`} key={item.item.id}>
 							<CoinCard
 							number={item.item.market_cap_rank}
 							image={item.item.small}
