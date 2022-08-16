@@ -52,7 +52,15 @@ h2 {
 .flexSide {
 	display: flex;
 }
-.size {
+
+.subtextsize {
+	color: #374151;
+	font-size: 0.6rem;
+	/* line-height: 1rem; */
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 .loader {
