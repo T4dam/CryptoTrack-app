@@ -13,7 +13,6 @@ const CoinFetch = () => {
 	// const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
 
 	const formatData = (data) => {
-		console.log({ data: data });
 		return data.map((el) => {
 			return {
 				x: el[0],
@@ -58,9 +57,7 @@ const CoinFetch = () => {
 				year: formatData(year.data.prices),
 				detail: detail.data,
 			});
-			console.log({ week: week });
 			setIsLoading(false);
-			console.log(coin);
 		};
 
 		fetchData();

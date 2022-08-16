@@ -7,7 +7,6 @@ import { IoMdArrowDropup } from 'react-icons/io';
 
 const CoinDetailPage = ({ coin }) => {
 	const { detail } = coin;
-	console.log(detail);
 
 	const renderData = () => {
 		if (detail) {
@@ -82,7 +81,6 @@ const CoinDetailPage = ({ coin }) => {
 									<tbody>
 										<tr>
 											{data.map((item) => {
-												console.log({ mapas: item.day });
 												return (
 													<td
 														className={
@@ -90,7 +88,6 @@ const CoinDetailPage = ({ coin }) => {
 														}
 													>
 														{data.forEach((x) => {
-															console.log({ x: x });
 															return Number(x);
 														}) < 0 ? (
 															<MdArrowDropDown />

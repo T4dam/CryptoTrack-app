@@ -29,10 +29,17 @@ ChartJS.register(
 );
 
 const Cryptochartsmall = ({ item }) => {
-	console.log(item);
 	const { coinId } = useParams();
 	const { response } = useAxios(
 		`coins/${item}/market_chart?vs_currency=eur&days=7`,
+		{
+			withCredentials: false,
+			crossDomain: true,
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				'Content-Type': 'application/json',
+			},
+		},
 	);
 	if (!response) {
 		return (
@@ -57,6 +64,7 @@ const Cryptochartsmall = ({ item }) => {
 		x: value[0],
 		y: value[1].toFixed(2),
 	}));
+	console.log(response);
 	// const { week } = coin;
 	const options = smallChartOptions;
 

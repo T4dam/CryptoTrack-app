@@ -18,7 +18,7 @@ const Coins = (props) => {
 			<Hero />
 			<div>
 				<div className="tablehead">
-					<table cellspacing="0" className="fullwidth text-style">
+					<table cellSpacing="0" className="fullwidth text-style">
 						<thead>
 							<tr>
 								<th>#</th>
@@ -27,7 +27,7 @@ const Coins = (props) => {
 								<th>24h</th>
 								<th className="hide-mobile">Volume (24h)</th>
 								<th className="hide-mobile">Market Cap</th>
-								<th className="hide-mobile">Last 24 hours</th>
+								<th className="hide-mobile">Last 7 days</th>
 							</tr>
 						</thead>
 						<tbody>
