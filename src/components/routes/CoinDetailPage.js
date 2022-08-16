@@ -79,10 +79,11 @@ const CoinDetailPage = ({ coin }) => {
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
+										{/* <tr>
 											{data.map((item) => {
 												return (
 													<td
+														key={item.id}
 														className={
 															Number(Object.keys(item)[1]) < 0 ? 'red' : 'green'
 														}
@@ -98,7 +99,7 @@ const CoinDetailPage = ({ coin }) => {
 													</td>
 												);
 											})}
-										</tr>
+										</tr> */}
 										<tr>
 											<td
 												className={

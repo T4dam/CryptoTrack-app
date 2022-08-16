@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import CoinDetailPage from './coin';
+import CoinDetailPage from './CoinDetailPage';
 import coinGecko from '../../apis/coinGecko';
 import Cryptochart from '../chart/cryptochart';
 

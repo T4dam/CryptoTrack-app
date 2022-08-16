@@ -13,6 +13,17 @@ const Navbar = () => {
 					</span>
 					<h1 className="">
 						Coin<span className="color">Track</span>
+						<div
+							style={{ display: 'flex', alignItems: 'center' }}
+							className="subtextsize"
+						>
+							<img
+								style={{ width: '15px', height: '15px' }}
+								src="/coingecko.png"
+								alt="coingecko logo"
+							/>
+							<span>Powered by Coingecko</span>
+						</div>
 					</h1>
 				</div>
 			</div>

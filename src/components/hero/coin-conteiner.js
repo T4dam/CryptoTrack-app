@@ -19,12 +19,12 @@ const CoinConteiner = ({ coins, number, title, startnumber, icon }) => {
 						</th>
 					</tr>
 				</thead>
-				<tbody>
-					{/* <div className="mx"> */}
-					{coins.coins &&
-						coins.coins.slice(startnumber, number).map((item) => {
-							// prettier-ignore
-							return (<>
+				{/* <tbody> */}
+				{/* <div className="mx"> */}
+				{coins.coins &&
+					coins.coins.slice(startnumber, number).map((item) => {
+						// prettier-ignore
+						return (<tr>
                         <Link to={`/coin/${item.item.id}`} key={item.item.id}>
 							<CoinCard
 							number={item.item.market_cap_rank}
@@ -34,13 +34,12 @@ const CoinConteiner = ({ coins, number, title, startnumber, icon }) => {
 							price={item.item.price_btc.toFixed(10)}
 							/>
 						</Link>
+                      </tr>
                         
-                        
-                        </>
                         )
-						})}
-					{/* </div> */}
-				</tbody>
+					})}
+				{/* </div> */}
+				{/* </tbody> */}
 			</table>
 		</div>
 	);
