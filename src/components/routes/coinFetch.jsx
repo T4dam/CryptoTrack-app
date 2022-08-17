@@ -5,6 +5,7 @@ import CoinDetailPage from './CoinDetailPage';
 import coinGecko from '../../apis/coinGecko';
 import Cryptochart from '../chart/cryptochart';
 import Skeleton from './../skeleton';
+// import loading from './../../public/loading.gif';
 
 const CoinFetch = () => {
 	const [coin, setCoin] = useState([]);
@@ -65,10 +66,13 @@ const CoinFetch = () => {
 	}, []);
 
 	const renderData = () => {
-		if (!isLoading) {
+		if (isLoading) {
 			return (
-				<div className="">
-					<Skeleton />
+				<div className="flexCenter mt-5">
+					<div class="lds-dual-ring">
+						<div></div>
+					</div>
+					{/* <Skeleton /> */}
 				</div>
 			);
 		}
