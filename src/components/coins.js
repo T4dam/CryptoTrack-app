@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 // import CoinItem from './coinItem';
 import './coins.css';
 import Hero from './hero';
@@ -87,6 +86,7 @@ const Coins = (props) => {
 											<td className="hide-mobile">
 												{item.market_cap.toLocaleString()} €
 											</td>
+
 											<td className="hide-mobile">
 												<Cryptochartsmall item={item.id} />
 											</td>

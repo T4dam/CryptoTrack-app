@@ -10,27 +10,27 @@ const CoinDetailPage = ({ coin }) => {
 
 	const renderData = () => {
 		if (detail) {
-			const data = [
-				{
-					hour: detail.market_data.price_change_percentage_1h_in_currency.eur,
-				},
-				{
-					day: detail.market_data.price_change_percentage_24h_in_currency.eur,
-				},
-				{
-					week: detail.market_data.price_change_percentage_7d_in_currency.eur,
-				},
-				{
-					twoWeeks:
-						detail.market_data.price_change_percentage_14d_in_currency.eur,
-				},
-				{
-					month: detail.market_data.price_change_percentage_30d_in_currency.eur,
-				},
-				{
-					year: detail.market_data.price_change_percentage_1y_in_currency.eur,
-				},
-			];
+			// const data = [
+			// 	{
+			// 		hour: detail.market_data.price_change_percentage_1h_in_currency.eur,
+			// 	},
+			// 	{
+			// 		day: detail.market_data.price_change_percentage_24h_in_currency.eur,
+			// 	},
+			// 	{
+			// 		week: detail.market_data.price_change_percentage_7d_in_currency.eur,
+			// 	},
+			// 	{
+			// 		twoWeeks:
+			// 			detail.market_data.price_change_percentage_14d_in_currency.eur,
+			// 	},
+			// 	{
+			// 		month: detail.market_data.price_change_percentage_30d_in_currency.eur,
+			// 	},
+			// 	{
+			// 		year: detail.market_data.price_change_percentage_1y_in_currency.eur,
+			// 	},
+			// ];
 			return (
 				<div>
 					<div className="coin-container">

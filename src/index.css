@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
+:root {
+	--loading-grey: #ededed;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;

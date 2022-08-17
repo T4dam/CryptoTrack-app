@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import CoinDetailPage from './CoinDetailPage';
 import coinGecko from '../../apis/coinGecko';
 import Cryptochart from '../chart/cryptochart';
+import Skeleton from './../skeleton';
 
 const CoinFetch = () => {
 	const [coin, setCoin] = useState([]);
@@ -64,8 +65,12 @@ const CoinFetch = () => {
 	}, []);
 
 	const renderData = () => {
-		if (isLoading) {
-			return <div className="">Leading...</div>;
+		if (!isLoading) {
+			return (
+				<div className="">
+					<Skeleton />
+				</div>
+			);
 		}
 		return (
 			<>

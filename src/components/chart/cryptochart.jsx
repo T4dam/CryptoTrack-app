@@ -37,7 +37,7 @@ const Cryptochart = ({ coin }) => {
 	if (!response) {
 		return (
 			<div className="wrapper-container mt-8">
-				<div>nera..</div>
+				<div>Loading...</div>
 			</div>
 		);
 	}
